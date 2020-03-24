@@ -12,7 +12,10 @@
     </div>
     <div class="form-group">
         <label>Zip</label>
-        <input formControlName="zip" type="text" class="form-control">
+        <input formControlName="zip" [class.is-invalid]="editUserForm.get('zip').invalid && editUserForm.get('zip').touched" type="text" class="form-control">{{city}}
+        <span [class.d-none]="editUserForm.get('zip').valid || editUserForm.get('zip').untouched">Please enter a valid city zip</span>
+
+
     </div>
 
     <button type="submit" class="btn btn-primary btn-sm m-2">Next Step</button>

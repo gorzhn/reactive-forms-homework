@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { DataAccessService } from '../data/data-access.service';
 import { Router } from '@angular/router';
+import {Cities} from '../data/city-data';
+
 
 @Component({
   selector: 'app-step2',
@@ -10,7 +12,8 @@ import { Router } from '@angular/router';
 })
 export class Step2Component implements OnInit {
   editUserForm :FormGroup;
-  usersMovies : FormGroup
+  usersMovies : FormGroup;
+  cities  = Cities;
   constructor(private fb : FormBuilder, private dataService : DataAccessService, private router : Router) { }
 
   ngOnInit(): void {

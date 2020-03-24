@@ -1,11 +1,12 @@
 import { AbstractControl } from "@angular/forms";
-
+import {Cities} from './data/city-data'
 export function ZipValidator(control:AbstractControl):{[key:string]:any} | null{
-const zipCodes = {1000:"Skopje", 1200:"Tetovo", 1230:"Gostivar"};
 
-   for (var zip in zipCodes){
+   for (var zip in Cities){
+       console.log(zip)
         if(zip === control.value){
-            return null;
+        
+                        return null;
         }
    }
     return {"zipCode":{value:control.value}}
