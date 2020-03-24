@@ -18,6 +18,6 @@
 
     </div>
 
-    <button type="submit" class="btn btn-primary btn-sm m-2">Next Step</button>
+    <button [disabled]="!editUserForm.valid" type="submit" class="btn btn-primary btn-sm m-2">Next Step</button>
     {{editUserForm.value | json}}
 </form>

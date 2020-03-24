@@ -48,9 +48,8 @@ export class DataAccessService {
 
   addPerson(){
     var p = new Person();
-    this.people.push(p)
+    
     return p;
-
   }
   submitForm(){
 
