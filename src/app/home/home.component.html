@@ -1,0 +1,20 @@
+<button (click)="addPerson()" class="btn-primary btn-sm m-2">New</button>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Zip Code</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of people">
+        <td>{{person.firstName}}</td>
+        <td>{{person.lastName}}</td>
+        <td>{{person.zip}}</td>
+        <td><button (click)="editPerson(person)" class="btn-primary btn-sm m-2">Edit</button></td>
+        <td><button (click)="deletePerson(person)" class="btn-primary btn-sm m-2">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>

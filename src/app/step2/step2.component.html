@@ -1,0 +1,21 @@
+
+<form [formGroup] = "editUserForm"  >
+    <button  class="btn btn-primary btn-sm m-2" (click)="AddNewMovie()">Add movie field</button>
+    <button class="btn btn-warning btn-sm m-2" (click)="Back()">Go back one step</button>
+    <button class="btn btn-primary btn-sm m-2" (click)="Submit()" type="submit">Submit Form</button>
+
+        {{editUserForm.value | json}}
+        {{usersMovies | json}}
+   
+        
+  <div formArrayName="movies" *ngFor="let movie of AllMovies.controls; let index = index; let last = last;">
+    <div  class="form-group" [formGroupName]="index">
+      <input type="text" class="form-control" placeholder="Movie" class="form-control" formControlName="movieName">
+      <input type="text" class="form-control" placeholder="Movie" class="form-control" formControlName="moviePoster">
+      <button class="btn btn-primary btn-sm m-2" (click)="removeMovie(index)">Remove this movie</button>
+    </div>
+    <br/>
+  </div>
+
+  
+</form>
